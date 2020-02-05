@@ -1,4 +1,3 @@
-
 ## usersテーブル
 
 |Column|Type|Options|
@@ -8,7 +7,8 @@
 |password|string|null: false|
 
 ### Association
-- has_many :group_users
+  has_many :groups_users
+- has_many :groups,through: groups_users
 - has_many :massages
 
 ## massagesテーブル
@@ -21,8 +21,8 @@
 |image|string|
 
 ### Association
-- belongs_to :users
-- belongs_to :groups
+- belongs_to :user
+- belongs_to :group
 
 ## groupsテーブル
 
@@ -32,7 +32,8 @@
 |massage_id|integer|null: false, foreign_key: true|
 
 ### Association
-- belongs_to :group_users
+  has_many :groups_users
+- has_many :user,through: groups_users
 - has_many :massages
 
 ## groups_usersテーブル
