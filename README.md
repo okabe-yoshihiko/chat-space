@@ -17,7 +17,7 @@
 |------|----|-------|
 |uer_id|integer|null: false, foreing_key: true|
 |group_id|integer|null: false, foreign_key: true|
-|body|text|null: false|
+|body|text|
 |image|string|
 
 ### Association
@@ -28,12 +28,11 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|uer_id|integer|null: false, foreing_key: true|
-|massage_id|integer|null: false, foreign_key: true|
+|name|string|null: false|
 
 ### Association
   has_many :groups_users
-- has_many :user,through: groups_users
+- has_many :users,through: groups_users
 - has_many :massages
 
 ## groups_usersテーブル
