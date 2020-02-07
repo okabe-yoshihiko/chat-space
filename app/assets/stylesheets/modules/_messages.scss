@@ -1,0 +1,18 @@
+* {
+  box-sizing: border-box;
+}
+
+$white-color: #ffffff;
+
+@mixin displayflex{
+    display: flex;
+    justify-content: space-between;
+  }
+
+@mixin box($heightsize,$widthsize){
+   height: $heightsize;
+   width: $widthsize;
+}
+@import "side_bar";
+@import "main_chat"
+

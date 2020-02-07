@@ -1,0 +1,48 @@
+
+
+
+.side-bar{
+  @include box(100vh,300px);
+  background-color: #253141;
+  float: left;
+  &__box{
+    height: 100px;
+    padding: 0 20px;
+    background-color: #253141;
+    display: flex;
+    align-items: center;
+    &__top-items{
+      @include displayflex;
+      @include box(20px,100%);
+      color: $white-color;
+      font-weight: bold;
+      &__menu{
+        display: flex;
+         }
+         .fa-cog{
+           color: $white-color;
+         }
+         .fa-edit{
+           color: $white-color;
+           padding-right: 5px
+         }
+    }
+  }
+  &__group{
+    height: calc(100vh - 100px);
+    background-color: #2f3e51;
+    padding: 20px 20px;
+    &__list{
+      margin-bottom: 40px;
+      &__groups{
+        color: $white-color;
+        font-size: 15px;
+        margin-bottom: 5px;
+      }
+      &__names{
+        color: $white-color;
+        font-size: 11px;
+      }
+    }
+  }
+}
