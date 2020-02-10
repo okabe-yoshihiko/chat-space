@@ -39,9 +39,12 @@
         font-size: 15px;
         margin-bottom: 5px;
       }
-      &__names{
+      &__message{
         color: $white-color;
         font-size: 11px;
+      }
+      a{
+        text-decoration: none;
       }
     }
   }
