@@ -1,42 +1,27 @@
-.main-chat
- .main-chat__group
-  .main-chat__group__box-left
-   .main-chat__group__box-left__group-name
-    qqq
-   .main-chat__group__box-left__menber-list
-    Member
-  
-  = link_to "" do
-   .main-chat__group__edit-btn
-    Edit
- .main-chat__message
-  .main-chat__message__box
-   .main-chat__message__box__info
-    .main-chat__message__box__info__username
-     ウルトラマン
-    .main-chat__message__box__info__timestamp
-     2019/09/21
-   .main-chat__message__box__text
-    あと３フン
-    .main-chat__message__box
-   .main-chat__message__box__info
-    .main-chat__message__box__info__username
-     カップラーメン
-    .main-chat__message__box__info__timestamp
-     2019/09/21
-   .main-chat__message__box__text
-    あと３フン
- .main-chat__message-form
-  .main-chat__message-form__box
-   .main-chat__message-form__box__body
-    .main-chat__message-form__box__body__text
-     aaaa
-    
-    .main-chat__message-form__box__icon
-    %label{class: "btn"}
-     = icon('fas', 'image')
-     %input{type: "file"}
 
-   .main-chat__message-form__box__submit
-    Send
- 
+.main-chat
+  .main-chat__group
+    .main-chat__group__box-left
+      .main-chat__group__box-left__group-name
+        = @group.name
+      .main-chat__group__box-left__member
+        Member : 
+        .main-chat__group__box-left__member__list
+          %ul
+          - @group.users.each do |user|
+            %li= user.name
+    = link_to edit_group_path(@group.id) do
+      .main-chat__group__edit-btn
+        Edit
+  .main-chat__message
+    .messages
+    = render @messages
+  .main-chat__message-form
+    =form_for [@group, @message] do |f|
+      .main-chat__message-form__date
+        =f.text_field :content, class: 'main-chat__message-form__box__body', placeholder: 'type a message'
+        =f.label :image, class: 'btn' do
+          = icon('fas', 'image', class: 'icon')
+          = f.file_field :image, class: 'hidden'
+      = f.submit 'Send', class: 'submit'
+  

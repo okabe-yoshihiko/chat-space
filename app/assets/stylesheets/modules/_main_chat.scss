@@ -16,10 +16,21 @@
         color: #333333;
         margin-bottom: 15px;
       }
-      &__menber-list{
+      &__member{
         display: flex;
        color: #999999; 
        font-size: 12px;
+       &__list{
+        color: #999999; 
+        font-size: 12px;
+        list-style: none;
+        padding: 0 5px;
+        display: flex;
+        li{
+          padding: 0 5px;
+        }
+       }
+      
       }
 
       }
@@ -68,37 +79,30 @@
     height: 90px;
     background-color: #d2d2d2;
     padding: 20px 40px;
-    &__box{
+    .new_message{
       display: flex;
-
-      &__body{
+    }
+    &__date{
       position: relative;
       width: 100%;
-      background-color: $white-color;
-
-
-        &__text{
-         @include box(50px,100%);
-          padding: 0 40px 0 10px;
-          line-height: 50px;
-          color: grey;
-          border-style: none;
+    }
+      &__box__body{
+      @include box(50px,100%);
+      padding: 0 40px 0 10px;
+      border: none;  
         }
-        }
-        .btn{
-          color: black;
-          font-size: 1.3rem;
-        position: absolute;
-        top: 10px;
+      .btn{
+        font-size: 1.3rem;
+        top: 15px;
         right: 10px;
+        position: absolute;
         cursor: pointer;
-        input{
-          display: none;
-        }
+       input{
+        display: none;
       }
-      
 
-      &__submit{
+      }  
+      .submit{
         @include box(50px,100px);
         background-color: #38aef0;
         color: $white-color;
@@ -106,9 +110,7 @@
         padding:  0 30px;
         margin-left:  15px;
         cursor: pointer;
-      }
-      
-    }
+      }     
+    
   }
- 
 }
