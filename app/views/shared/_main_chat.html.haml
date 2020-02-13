@@ -17,7 +17,7 @@
     = render @messages
   .main-chat__message-form
     =form_for [@group, @message] do |f|
-      .main-chat__message-form__date
+      .main-chat__message-form__text
         =f.text_field :content, class: 'main-chat__message-form__box__body', placeholder: 'type a message'
         =f.label :image, class: 'btn' do
           = icon('fas', 'image', class: 'icon')
