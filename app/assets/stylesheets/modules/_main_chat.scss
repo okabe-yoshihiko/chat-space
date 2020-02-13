@@ -48,11 +48,12 @@
       }
     }
   
-  &__message{
+    .messages{
     height: calc(100vh - 100px - 90px);
     background-color: #fafafa;
     padding: 46px 40px;
-    &__box{
+    overflow: scroll;
+    .message{
       padding-bottom: 40px;
       &__info{
         display: flex;
