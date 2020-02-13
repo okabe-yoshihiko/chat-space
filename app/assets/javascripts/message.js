@@ -79,7 +79,7 @@ var reloadMessages = function() {
     $('.messages').animate({ scrollTop: $('.messages')[0].scrollHeight});
   })
   .fail(function() {
-    console.log('error');
+    alert("失敗しました");
   });
 };
 if (document.location.href.match(/\/groups\/\d+\/messages/)) {
